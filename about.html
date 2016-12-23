@@ -1,0 +1,26 @@
+
+    <h2> Directory List</h2>
+    
+    <div align= "center">
+    <div class="well">
+      <h4>Search</h4>
+      <input type ="text" ng-model = "searchText" placeholder= "Enter the name">
+      <select ng-model="artistOrder">
+        <option value = "name">Name</option>
+        <option value = "id">Id</option>
+      </select>
+    </div>
+    <div class="row">
+        <ul ng-repeat= "artists in UserList | filter: searchText | orderBy: artistOrder">
+          <div class="jumbotron" style="padding : 2px; margin: 2px">
+        <div class = well well-sm >
+        <b>Name</b> :{{artists.name}}
+        </div>
+        <div class = well well-lg>
+        <b>ShortName</b> : {{artists.shortname}}<br>
+        <b>Bio</b> : {{artists.bio}}
+        </div>
+        </div>
+        </ul>
+      </div>
+    </div>
